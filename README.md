@@ -7,6 +7,7 @@ It is my first project using Django framework
 
 In this project is used the following languages:
 
+- Pyton
 - HTML
 - CSS
 - Django
