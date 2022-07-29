@@ -1,0 +1,15 @@
+{%  extends 'layouts/base.html' %}
+{% block title %}
+    <title>{{ post.title }}</title>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-8 offset-2">
+            <img style="width: 100%" src="{{ post.image.url }}" alt="{{ post.title }}">
+            <h1>{{ post.title }}</h1>
+            <p>
+                {{ post.body }}
+            </p>
+        </div>
+    </div>
+{% endblock %}
