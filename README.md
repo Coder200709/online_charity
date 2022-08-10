@@ -23,4 +23,3 @@ In this project is used the following languages:
 ## Feedback
 
 If you have any feedback, please reach out to us at abdulazizilla200709@gmail.com
-This is my first project using django framework
