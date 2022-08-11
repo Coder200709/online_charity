@@ -1,6 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import PostModel
-from .forms import PostCreateForm
+from .forms import PostCreateForm, PostUpdateForm
 
 
 def post_create_view(request):
@@ -39,3 +39,15 @@ def post_detail_view(request, id):
 def post_delete_view(request, id):
     PostModel.objects.get(id=id).delete()
     return redirect('index')
+
+
+def update_post_view(request, id):
+    instance = get_object_or_404(PostModel, id=id)
+    form = PostUpdateForm(data=request.POST or None, files=request.FILES or None, instance=instance)
+    if form.is_valid():
+        form.save()
+        return redirect('index')
+
+    return render(request, 'post-update.html', context={
+        "form": form
+    })
