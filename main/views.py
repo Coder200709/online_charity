@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import PostModel
 from .forms import PostCreateForm, PostUpdateForm
+from django.db.models import Q
 
 
 def post_create_view(request):
@@ -24,6 +25,9 @@ def post_create_view(request):
 def home_view(request):
     request.title = 'Home page'
     posts = PostModel.objects.all().order_by('-id')
+    search = request.GET.get('q', '')
+    if search:
+        posts = posts.filter(Q(title__icontains=search) | Q(body__icontains=search))
     return render(request, 'index.html', context={
         'posts': posts
     })
