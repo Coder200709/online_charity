@@ -22,8 +22,8 @@ def post_create_view(request):
     })
 
 
-def home_view(request):
-    request.title = 'Home page'
+def post_view(request):
+    request.title = 'Yangiliklar'
     posts = PostModel.objects.all().order_by('-id')
     search = request.GET.get('q', '')
     if search:

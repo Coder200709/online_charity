@@ -10,16 +10,13 @@
     <link rel="stylesheet" href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 </head>
-<body>
+<body style="overflow-x: hidden">
 {% include 'layouts/navbar.html' %}
-<div class="container py-4">
 
     {% block content %}
 
 
     {% endblock %}
-
-</div>
 
 
 <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>

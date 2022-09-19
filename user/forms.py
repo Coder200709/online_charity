@@ -1,6 +1,14 @@
 from django import forms
-from .models import UserModel
+from django.contrib.auth import get_user_model
+
 from django.core.exceptions import ValidationError
+
+UserModel = get_user_model()
+
+
+class UserLoginForm(forms.Form):
+    username = forms.CharField(widget=forms.TextInput())
+    password = forms.CharField(widget=forms.PasswordInput)
 
 
 class UserRegistrationForm(forms.ModelForm):
@@ -13,7 +21,7 @@ class UserRegistrationForm(forms.ModelForm):
 
     class Meta:
         model = UserModel
-        fields = '__all__'
+        fields = ['username', 'first_name', 'last_name', 'password', 'confirm_password']
         widgets = {
             'password': forms.PasswordInput()
         }
