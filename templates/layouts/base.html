@@ -6,15 +6,89 @@
     {% block title %}
 
     {% endblock %}
+    <link rel="icon" href="/media/posts/1200361-200-removebg-preview.png">
     <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:900&display=swap');
+body{
+      background: rgb(2,0,36) ;
+      background: rgb(3,138,206);
+      background: linear-gradient(90deg, rgba(3,138,206,1) 18%, rgba(2,147,213,1) 29%, rgba(2,151,215,1) 46%, rgba(1,187,238,1) 79%, rgba(0,212,255,1) 100%);">
+}
+
+.about-title{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.about-param{
+    text-align: center;
+    padding-bottom: 30px;
+
+}
+
+.titlus {
+  position: absolute;
+  top: 16%;
+  left: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+
+.black-lives-matter {
+  font-size: 9vw;
+  line-height: 11vw;
+  margin: 0;
+  font-family: 'Red Hat Display', sans-serif;
+  font-weight: 900;
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3NdQxncgP5ovtbOIE4MBzkyCRPM8uXTQZ8g&usqp=CAU);
+  background-size: 40%;
+  background-position: 50% 50%;
+  -webkit-background-clip: text;
+  color: rgba(0,0,0,0.08);
+  animation: zoomout 10s ease 500ms forwards;
+}
+
+@keyframes zoomout {
+  from {
+    background-size: 40%;
+  }
+  to {
+    background-size: 10%;
+  }
+}
+.animation {
+      position: absolute;
+      right: 0;
+      animation: animation 2s ease-out;
+    }
+
+
+@keyframes animation {
+      0% {
+        opacity: 0;
+        right: -700px;
+      }
+
+      100% {
+        opacity: 1;
+        right: 0;
+      }
+    }
+    </style>
 </head>
 <body style="overflow-x: hidden">
 {% include 'layouts/navbar.html' %}
 
     {% block content %}
-
+    
 
     {% endblock %}
 

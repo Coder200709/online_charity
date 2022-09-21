@@ -4,11 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <style>
+        #navbar-color{
+            background: rgb(3,138,206);
+            background: linear-gradient(90deg, rgba(3,138,206,1) 18%, rgba(2,147,213,1) 29%, rgba(2,151,215,1) 46%, rgba(1,187,238,1) 79%, rgba(0,212,255,1) 100%);
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-primary " >
+    <nav class="navbar navbar-expand-lg" id="navbar-color" >
     <div class="container">
-        <a class="navbar-brand" href="{% url 'index' %}"><img src="/media/posts/Screenshot_from_2022-08-13_22-12-26-removebg-preview.png" height="50px" width="100px" alt="rasm"></a>
+        <a class="navbar-brand" href="{% url 'index' %}"><img src="/media/posts/Screenshot_from_2022-09-21_14-44-29-removebg-preview.png" height="50px" width="50px" alt="rasm"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -16,18 +22,23 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'post_create' %}">Create Post</a>
+                    <a class="nav-link active text-white" aria-current="page" href="{% url 'post_create' %}">Create Post</a>
                 </li>
                 {% if request.user.is_authenticated %}
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Log Out</a>
+                    
+                <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" href="#about">Biz Haqimizda</a>
                 </li>
+                
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
+                    <a class="nav-link active text-white" aria-current="page" href="{% url 'login' %}">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'registration' %}">Registration</a>
+                    <a class="nav-link active text-white" aria-current="page" href="{% url 'registration' %}">Registration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" href="#about">Biz Haqimizda</a>
                 </li>
                 {% endif %}
                 {% if request.user.is_authenticated %}
@@ -40,6 +51,9 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="">Account</a></li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" href="{% url 'logout' %}">Log Out</a>
                 </li>
                 {% endif %}
             </ul>
