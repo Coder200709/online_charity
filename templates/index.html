@@ -14,11 +14,12 @@
       </div>
       <img src="/media/posts/Screenshot_from_2022-09-21_21-18-33-removebg-preview.png" alt="rasm" id="slide-in" class="animation">
         </div>
-
+        <div class="parallax"></div>
       <div class="about" id="about">
         <h1 class="about-title">
           Biz Haqimizda
         </h1>
+
         <p class="about-param">
           Assalomu alaykum. Dunyoda millionlab yordamga muhtoj odamlar borligini bilasizmi? <br>
           Ularga yordam berish barchamizning ustimizda turgan burchdir. Ammo ular bilan bog'lanish <br>
@@ -26,81 +27,95 @@
           ularning rostgo'yliklarini ham tekshiramiz.
         </p>
       </div>
-
-      </div>
+      
       <div class="row">
         <div class="col-6 offset-3">
-          <img style="margin-right:100px;" src="/media/posts/Screenshot_from_2022-09-24_09-37-26-removebg-preview.png" alt="rasm">
-        <img style="margin-right: 100px;" src="/media/posts/Screenshot_from_2022-09-24_09-37-51-removebg-preview.png" alt="rasm">
-        <img src="/media/posts/Screenshot_from_2022-09-24_09-39-15-removebg-preview.png" alt="rasm">
+          <img style="margin-right:100px; margin-bottom: 50px;" src="/media/posts/Screenshot_from_2022-09-24_09-37-26-removebg-preview.png" alt="rasm">
+        <img style="margin-right: 100px; margin-bottom: 50px;" src="/media/posts/Screenshot_from_2022-09-24_09-37-51-removebg-preview.png" alt="rasm">
+        <img  style="margin-bottom: 50px;" src="/media/posts/Screenshot_from_2022-09-24_09-39-15-removebg-preview.png" alt="rasm">
         </div>
         
       </div>
-        {% for post in posts %}
-            <div class="col-6">
-                <div class="card mb-3">
-                    <a href="{% url 'detail' post.id %}" class="text-decoration-none"><img src="{{post.image.url}}" class="card-img-top" alt="{{post.title}}"></a>
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="{% url 'detail' post.id %}" class="text-dark text-decoration-none">{{ post.title }}</a></h5>
-                        <p class="card-text">{{ post.body|truncatewords:'10'}}</p>
-                        <p class="card-text d-flex justify-content-between align-items-center"><small class="text-muted">Post created {{ post.created_at|timesince}} ago</small>
-                            <span class="">
-                            <a href="{% url 'post_update' id=post.id %}" class="btn btn-info"><i class="bi bi-pencil-fill text-white"></i></a>
-                            <a class="btn btn-danger" href="{% url 'post_delete' id=post.id %}"><i class="bi bi-trash-fill"></i></a>
-                        </p>
-                    </div>
-                </div>
+      <div class="parallax2"></div>
+      <h1 class="fact-title">
+        Faktlar
+      </h1>
+      <div class="fact" id="fact">
+
+        <div class="row" >
+          <div class="card" style="width: 18rem;">
+            <img src="/media/posts/download (3).jpeg" class="card-img-top" alt="rasm">
+            <div class="card-body">
+              <h5 class="card-title">Bolalarga yordam bering</h5>
+              <p class="card-text">Har kuni 22 mingga yaqin bola qashshoqlik tufayli vafot etadi.</p>
             </div>
-        {% endfor %}
+          </div>
+          <div class="card" style="width: 18rem; margin-left: 5%;">
+            <img src="/media/posts/download (1).jpeg" class="card-img-top" alt="rasm">
+            <div class="card-body">
+              <h5 class="card-title">Qashshoqlarga yordam bering</h5>
+              <p class="card-text">Dunyoda 2,2 milliard bola bor, ularning 1 milliardi qashshoqlikda yashaydi.</p>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;margin-left: 5% ;">
+            <img src="/media/posts/images.jpeg" class="card-img-top" alt="rasm">
+            <div class="card-body">
+              <h5 class="card-title">Kambaga'llarga yordam bering</h5>
+              <p class="card-text">Starbucks’dagi bitta kappuchinoning narxi rivojlanayotgan mamlakatlardagi odamlarning o‘rtacha
+                 daromadidan (kuniga 3 dollar) qimmatroq.</p>
+            </div>
+          </div>
+        </div>
+
+          <h1 class="news">
+            Yangiliklar
+          </h1>
+
+        
+
+
+      {% for post in posts %}
+      <div class="col-4" style="margin-left: 270px;">
+          <div class="card mb-3">
+              <a href="{% url 'detail' post.id %}" class="text-decoration-none"><img src="{{post.image.url}}" class="card-img-top" alt="{{post.title}}"></a>
+              <div class="card-body">
+                  <h5 class="card-title"><a href="{% url 'detail' post.id %}" class="text-dark text-decoration-none">{{ post.title }}</a></h5>
+                  <p class="card-text">{{ post.body|truncatewords:'10'}}</p>
+                  <p class="card-text d-flex justify-content-between align-items-center"><small class="text-muted">Post created {{ post.created_at|timesince}} ago</small>
+                      <!-- <span class="">
+                      <a href="{% url 'post_update' id=post.id %}" class="btn btn-info"><i class="bi bi-pencil-fill text-white"></i></a>
+                      <a class="btn btn-danger" href="{% url 'post_delete' id=post.id %}"><i class="bi bi-trash-fill"></i></a>
+                  </p> -->
+              </div>
+          </div>
+      </div>
+  {% endfor %}
     </div>
-    <!-- Footer -->
+
 <footer class="bg-light ">
-  <!-- Grid container -->
-  <div class="container p-4">
-
-
-
-
-    <!-- Section: Form -->
+    <div class="container p-4">
     <section class="">
       <form action="">
-        <!--Grid row-->
         <div class="row d-flex justify-content-center">
-          <!--Grid column-->
           <div class="col-auto">
             <p class="pt-2">
               <strong>Sign up for our newsletter</strong>
             </p>
           </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
           <div class="col-md-5 col-12">
-            <!-- Email input -->
             <div class="form-outline mb-4">
               <input type="email" id="form5Example2" class="form-control" />
               <label class="form-label" for="form5Example2">Email address</label>
             </div>
           </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
           <div class="col-auto">
-
-            <!-- Submit button -->
             <button type="submit" class="btn btn-primary mb-4">
               Subscribe
             </button>
           </div>
-          <!--Grid column-->
         </div>
-        <!--Grid row-->
       </form>
     </section>
-    <!-- Section: Form -->
-
-
-    <!-- Section: Text -->
     <section class="mb-4">
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
@@ -109,19 +124,10 @@
         aliquam sequi voluptate quas.
       </p>
     </section>
-    <!-- Section: Text -->
-
-
-  </div>
-  <!-- Grid container -->
-
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+  </div>  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
     © 2022 Copyright:
     <a class="text-dark" href="https://github.com/Coder200709">Abdulaziz Github</a>
   </div>
-  <!-- Copyright -->
-
 </footer>
-<!-- Footer -->
+
 {% endblock %}
